@@ -1,6 +1,6 @@
 # batala_infra
 batala Infra repository
-testapp_IP = 51.250.36.31
+testapp_IP = 51.250.34.218
 testapp_port = 9292
 
 bastion_IP=158.160.120.23
