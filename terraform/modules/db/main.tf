@@ -15,7 +15,6 @@ provider "yandex" {
   image_id                 = var.image_id
   bucket_name              = var.backet_name
   service_account_id       = var.service_account_id
-  service_account_key_file = var.service_account_key_file
   access_key               = var.access_key
   secret_key               = var.secret_key
   db_id                    = var.db_id
