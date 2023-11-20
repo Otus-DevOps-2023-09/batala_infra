@@ -12,9 +12,6 @@ provider "yandex" {
   folder_id                = var.folder_id
   zone                     = var.zone
 #
-  bucket_name              = var.bucket_name
-  secret_key               = var.secret_key
-  service_account_id       = var.service_account_id
   image_id                 = var.image_id
   bucket_name              = var.backet_name
   service_account_id       = var.service_account_id
