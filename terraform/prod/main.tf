@@ -35,4 +35,10 @@ module "db" {
   folder_id                = var.folder_id
   zone                     = var.zone
   env                      = var.env
+
+  secret_key               = var.secret_key
+  bucket_name              = var.bucket_name
+  image_id                 = var.image_id
+  db_id                    = var.db_id
+  access_key               = var.access_key
 }
