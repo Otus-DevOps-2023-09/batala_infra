@@ -42,4 +42,5 @@ module "db" {
   image_id                 = var.image_id
   db_id                    = var.db_id
   access_key               = var.access_key
+  service_account_id       = var.service_account_id
 }
