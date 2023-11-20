@@ -15,8 +15,12 @@ module "app" {
   cloud_id                 = var.cloud_id
   folder_id                = var.folder_id
   zone                     = var.zone
-  db_ip_address            = module.db.internal_ip_address_db[0]
+  #db_ip_address            = module.db.internal_ip_address_db[0]
   env                      = var.env
+#
+  bucket_name              = var.bucket_name
+  secret_key               = var.secret_key
+  service_account_id       = var.service_account_id
 }
 
 module "db" {
