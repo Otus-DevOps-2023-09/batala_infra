@@ -14,7 +14,7 @@ provider "yandex" {
 
 }
 
-resource "yandex_compute_instance" "db" {
+resource "yandex_compute_instance" "app" {
   name        = "reddit-db-${var.env}"
   platform_id = "standard-v3"
 
