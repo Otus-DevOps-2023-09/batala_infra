@@ -1,16 +1,17 @@
-#terraform {
-#  required_providers {
-#    yandex = {
-#      source = "yandex-cloud/yandex"
-#    }
-#  }
-#  required_version = ">= 0.13"
-#}
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
+}
 provider "yandex" {
-  service_account_key_file = var.service_account_key_file
-  cloud_id                 = var.cloud_id
-  folder_id                = var.folder_id
-  zone                     = var.zone
+  #service_account_key_file 
+  token = "y0_AgAAAABxqxakAATuwQAAAADw4B4DSZkA0e-LR7m7AiPPAXgVxw6m_AM"
+  cloud_id                 = "b1g75uge12b4dnqbk3f6"
+  folder_id                = "b1gjmdta5qarrmg8d8ur"
+  zone                     = "ru-central1-c"
 }
 
 resource "yandex_compute_instance" "db" {

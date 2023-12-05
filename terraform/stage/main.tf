@@ -1,10 +1,18 @@
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
+}
+
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
   cloud_id                 = var.cloud_id
   folder_id                = var.folder_id
   zone                     = var.zone
-}
-  #db_ip_address            = module.db.internal_ip_address_db[0]
+}  #db_ip_address            = module.db.internal_ip_address_db[0]
 module "app" {
   source                   = "../modules/app"
   public_key_path          = var.public_key_path
