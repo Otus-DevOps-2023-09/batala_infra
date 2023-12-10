@@ -1,15 +1,20 @@
 # batala_infra
 batala Infra repository
 
-testapp = 158.160.121.231
-testapp_port = 9292
+# batala_infra
+batala Infra repository
+# Homework 8, Ansible 1
 
-testapp_IP = 51.250.34.218
-testapp_port = 9292
+## Main Part
 
-bastion_IP=158.160.120.23
-someinternalhost_IP=10.128.0.28
-ssh  -L  127.0.0.1:9999:10.128.0.28:22  appuser@158.160.120.23
-ssh  -p 9999 appuser@127.0.0.1
+* Установил Ansible на ВМ в облаке, чтобы можно было работать с разных компов.
+* Создал первые конфиг файлы
+  * **ansible.cfg** - параметры по-умолчанию
+  * **inventory** - описание группы хостов и параметры доступа к ним
+  * **inventory.yaml** - то же самое только в yaml формате
+* Создал первый плейбук **clone.yaml**
+* Проверил работу
 
-
+Для использования инвентори отличного от указанного по-умолчанию необходимо использовать опцию "-i"
+```
+$ ansible all -m ping -i inventory.yml

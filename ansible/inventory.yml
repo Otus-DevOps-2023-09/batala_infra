@@ -1,0 +1,11 @@
+ungrouped:
+  hosts:
+    mail.example.com:
+app:
+  hosts:
+    appserver:
+      ansible_host: 10.130.0.33
+db:
+  hosts:
+    one.example.com:
+      ansible_host: 10.130.0.14
