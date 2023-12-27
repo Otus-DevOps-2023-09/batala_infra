@@ -7,4 +7,5 @@ packer/config.pkr.hcl
 *.tfstate.backup
 *.tfvars
 .terraform
+*.retry
 /terraform/.terraform.lock.hcl

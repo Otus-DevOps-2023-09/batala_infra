@@ -1,0 +1,56 @@
+#https://www.mongodb.com/docs/mongodb-shell/install/
+---
+- hosts: db
+  vars:
+    mongodb_version: 3.0.7
+  tasks:
+    - name: Copy repo config
+      become: true
+      become_method: sudo 
+      copy:
+        src: /home/appuser/ansible-2/batala_infra/ansible/templates/mongodb-org-7.0.list
+        dest: /etc/apt/sources.list.d/mongodb-org-7.0.list
+    - name: Copy key file
+      become: true
+      become_method: sudo 
+      copy:
+        src: /home/appuser/ansible-2/batala_infra/ansible/templates/server-7.0.asc
+        dest: /etc/apt/trusted.gpg.d/server-7.0.asc
+    - name: Update and upgrade apt packages
+      become: true
+      become_method: sudo
+      become_user: root      
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400 #One day
+    - name: "Install MongoDB"
+      become: true
+      become_method: sudo
+      become_user: root 
+      apt: 
+         name: mongodb
+         allow-unauthenticated: yes
+         state: present
+         update_cache: yes
+      notify:
+        - restart mongodb
+
+#    - name: MongoDB | Install the packages
+#      become: true
+#      apt: name={{ item }}={{ mongodb_version }} state=present update_cache=yes
+#      with_items:
+#        - mongodb-org
+#        - mongodb-org-server
+#        - mongodb-org-shell
+#        - mongodb-org-mongos
+#        - mongodb-org-tools
+#      notify:
+#        - restart mongodb
+    - name: MongoDB | Listen to all interfaces
+      lineinfile: "dest=/etc/mongod.conf regexp='^  bindIp: 127.0.0.1' state=absent"
+      notify:
+        - restart mongodb
+  handlers:
+    - name: restart mongodb
+      service: name=mongodb state=restarted
