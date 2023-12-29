@@ -1,7 +1,7 @@
 # batala_infra
 batala Infra repository
 # Homework 9, Ansible 2
-
+ 
 ## Main Part
 
 * Сделал несколько playbook.
