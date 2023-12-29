@@ -2,22 +2,22 @@
   "builders": [
     {
       "type": "yandex",
-      "service_account_key_file": "{{ user `service_account_key_file`}}",
-      "folder_id": "{{ user `folder_id`}}",
-      "source_image_family": "ubuntu-1604-lts",
-      "image_name": "reddit-db-base-{{timestamp}}",
+      "service_account_key_file": "/home/appuser/key.json",
+      "folder_id": "b1gjmdta5qarrmg8d8ur",
+      "source_image_family": "ubuntu-2204-lts",
+      "image_name": "reddit-db-base",
       "image_family": "reddit-db-base",
       "ssh_username": "ubuntu",
       "platform_id": "standard-v3",
-      "subnet_id": "{{ user `subnet_id`}}",
-      "zone": "{{ user `zone`}}",
-      "use_ipv4_nat": "{{ user `use_ipv4_nat`}}"
+      "subnet_id": "e9bo22i6uj0tqc0bq2pc",
+      "zone": "ru-central1-a",
+      "use_ipv4_nat": "true"
     }
   ],
 "provisioners": [
  {
  "type": "ansible",
- "playbook_file": "ansible/packer_db.yml"
+ "playbook_file": "../ansible/mongo.yml"
  }
 ]
 }

@@ -1,6 +1,6 @@
 #https://www.mongodb.com/docs/mongodb-shell/install/
 ---
-- hosts: db
+- hosts: all
   vars:
     mongodb_version: 3.0.7
   tasks:
