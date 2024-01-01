@@ -8,4 +8,5 @@ packer/config.pkr.hcl
 *.tfvars
 .terraform
 *.retry
+jdauphant.nginx
 /terraform/.terraform.lock.hcl

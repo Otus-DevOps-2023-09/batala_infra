@@ -35,6 +35,7 @@ resource "yandex_compute_instance" "app" {
   network_interface {
     subnet_id = var.subnet_id
     nat       = true
+    security_group_ids = enp10p0ksn3lagj19iuq
   }
 
  metadata = {

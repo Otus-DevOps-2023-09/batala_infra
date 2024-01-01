@@ -1,0 +1,4 @@
+db_host: 10.132.0.2
+listen: 80
+server_name: reddit
+app_port: 37345
